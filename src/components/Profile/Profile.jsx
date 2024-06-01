@@ -37,7 +37,7 @@ export default function Profile() {
     setMostrarTodos(!mostrarTodos);
   };
   useEffect(() => {
-    if (repo.length === 0 && user != "") {
+    if (repo.length === 0 && user !== "github") {
       try {
         const notify = () =>
           toast.error(`${user} doesn't have repositories in his profile.`);
