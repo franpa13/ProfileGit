@@ -286,7 +286,7 @@ export default function Profile() {
           <div className=" porbando-heig bg-red-500">
             <ToastContainer
               position="bottom-center"
-              autoClose={5000}
+              autoClose={6000}
               hideProgressBar={false}
               newestOnTop={false}
               closeOnClick
