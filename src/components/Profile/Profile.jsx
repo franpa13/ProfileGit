@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useStore from "../../store/use-store";
-import "./Profile.css"
+import "./Profile.css";
 import CardRepo from "../Card/CardRepo";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Skeleton from "@mui/material/Skeleton";
@@ -41,7 +41,15 @@ export default function Profile() {
       try {
         const notify = () =>
           toast.error(`${user} doesn't have repositories in his profile.`);
-        
+
+        notify();
+      } catch (e) {
+        console.log(e);
+      }
+    } else {
+      try {
+        const notify = () => toast("Please enter a user.");
+
         notify();
       } catch (e) {
         console.log(e);
