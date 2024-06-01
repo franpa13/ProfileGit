@@ -47,7 +47,7 @@ export default function Profile() {
         console.log(e);
       }
     }
-  }, [repo, data]);
+  }, [repo]);
 
   return (
     <div className="bg-gray-800 md:w-full">

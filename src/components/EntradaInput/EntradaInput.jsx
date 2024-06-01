@@ -15,7 +15,10 @@ export default function EntradaInput() {
   const setUser = useStore((state) => state.setUser);
   const searchResults = useStore((state) => state.searchResults);
   const setSearchResults = useStore((state) => state.setSearchResults);
-  setUser("github");
+  if (!user) {
+    setUser("github")
+  }
+
   const handleChange = (event, value) => {
     setUser(value);
     debouncedSearch(value);
