@@ -20,7 +20,7 @@ export default function EntradaInput() {
     setUser(value);
     debouncedSearch(value);
   };
-
+console.log(user ,"este es el user");
   const debouncedSearch = debounce(async (username) => {
     if (username) {
       try {
@@ -50,7 +50,7 @@ export default function EntradaInput() {
     if (user !== "") {
       findUser(user);
       traerRepos(user);
-    } else if (user === undefined || user === "") {
+    } else if (user === undefined || user === "" || !user) {
       findUser("github");
       traerRepos("github");
     }
