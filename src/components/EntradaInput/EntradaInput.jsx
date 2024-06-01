@@ -20,9 +20,14 @@ export default function EntradaInput() {
   }
 
   const handleChange = (event, value) => {
-    setUser(value);
+    if (value && typeof value === 'object') {
+      setUser(value.login);
+    } else {
+      setUser(value);
+    }
     debouncedSearch(value);
   };
+  
   console.log(user, "este es el user");
   const debouncedSearch = debounce(async (username) => {
     if (username) {
