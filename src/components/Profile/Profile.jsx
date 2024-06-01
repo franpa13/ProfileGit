@@ -14,7 +14,7 @@ export default function Profile() {
   const [loading, setLoading] = useState(true);
   const [mostrarTodos, setMostrarTodos] = useState(true);
   const [animate, setAnimate] = useState(false);
-  console.log(repo, "repo ");
+
   useEffect(() => {
     let timer;
     if (data && repo) {
@@ -39,23 +39,31 @@ export default function Profile() {
   useEffect(() => {
     if (repo.length === 0 && user !== "github") {
       try {
-        const notify = () =>
-          toast.error(`${user} doesn't have repositories in his profile.`);
-
-        notify();
+        const notify = () => toast.error(`${user} doesn't have repositories in his profile.`);
+  
+        // Espera un breve período de tiempo antes de mostrar la notificación
+        const timeoutId = setTimeout(notify, 100);
+  
+        // Limpia el temporizador después de que se haya mostrado la notificación
+        return () => clearTimeout(timeoutId);
       } catch (e) {
         console.log(e);
       }
     } else {
       try {
         const notify = () => toast("Please enter a user.");
-
-        notify();
+  
+        // Espera un breve período de tiempo antes de mostrar la notificación
+        const timeoutId = setTimeout(notify, 100);
+  
+        // Limpia el temporizador después de que se haya mostrado la notificación
+        return () => clearTimeout(timeoutId);
       } catch (e) {
         console.log(e);
       }
     }
   }, [repo]);
+  
 
   return (
     <div className="bg-gray-800 md:w-full">
