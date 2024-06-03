@@ -13,7 +13,6 @@ export default function EntradaInput() {
   const searchResults = useStore((state) => state.searchResults);
   const setSearchResults = useStore((state) => state.setSearchResults);
 
-
   const handleChange = (event) => {
     setUser(event.target.value);
   };
@@ -28,7 +27,7 @@ export default function EntradaInput() {
       traerRepos("github");
     }
   };
-  
+
   return (
     <section className="relative">
       <img
@@ -37,7 +36,8 @@ export default function EntradaInput() {
         alt=""
       />
 
-      <form onSubmit={handleForm}>
+      <form className="bg-red-300 " onSubmit={handleForm}>
+        {/* <label  className="hidden md:block md:absolute text-white md:font-bold md:left-1/3 md:ml-6 md:top-4 " htmlFor="" >Username :</label> */}
         <TextField
           placeholder="Username"
           size="small"
