@@ -53,10 +53,9 @@ export default function Profile() {
       try {
         const notify = () => toast("Please enter a user.");
   
-        // Espera un breve período de tiempo antes de mostrar la notificación
         const timeoutId = setTimeout(notify, 100);
   
-        // Limpia el temporizador después de que se haya mostrado la notificación
+    
         return () => clearTimeout(timeoutId);
       } catch (e) {
         console.log(e);
