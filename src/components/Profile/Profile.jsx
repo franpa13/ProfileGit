@@ -49,18 +49,19 @@ export default function Profile() {
       } catch (e) {
         console.log(e);
       }
-    } else {
-      try {
-        const notify = () => toast("Please enter a user.");
+    } 
+    // else {
+    //   try {
+    //     const notify = () => toast("Please enter a user.");
   
-        const timeoutId = setTimeout(notify, 100);
+    //     const timeoutId = setTimeout(notify, 100);
   
     
-        return () => clearTimeout(timeoutId);
-      } catch (e) {
-        console.log(e);
-      }
-    }
+    //     return () => clearTimeout(timeoutId);
+    //   } catch (e) {
+    //     console.log(e);
+    //   }
+    // }
   }, [repo]);
   
 
