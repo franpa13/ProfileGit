@@ -22,7 +22,8 @@ export default function EntradaInput() {
     if (user !== "") {
       findUser(user);
       traerRepos(user);
-    } else if (user === undefined || user === "" || !user) {
+    }
+    if (user === undefined || user === "" || !user) {
       findUser("github");
       traerRepos("github");
     }
@@ -36,7 +37,7 @@ export default function EntradaInput() {
         alt=""
       />
 
-      <form className="bg-red-300 " onSubmit={handleForm}>
+      <form onSubmit={handleForm}>
         {/* <label  className="hidden md:block md:absolute text-white md:font-bold md:left-1/3 md:ml-6 md:top-4 " htmlFor="" >Username :</label> */}
         <TextField
           placeholder="Username"

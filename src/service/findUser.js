@@ -1,9 +1,6 @@
 import axios from "axios";
 import useStore from "../store/use-store";
 
-
-
-
 export const findUser = async (username) => {
   try {
     console.log(`Fetching data for user: ${username}`);

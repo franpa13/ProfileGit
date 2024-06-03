@@ -3,7 +3,7 @@ import { create } from 'zustand'
 
 
 const useStore = create((set) => ({
-    user: localStorage.getItem("user") || "github", 
+    user: localStorage.getItem("user") || "", 
     setUser: (newValue) => {
         set({ user: newValue }); 
         localStorage.setItem("user", newValue); 
